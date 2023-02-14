@@ -1,0 +1,24 @@
+----------------------------------------------------------
+ Winnow2 Training Weights
+----------------------------------------------------------
+Data Set : ../data/breast_cancer_dataset.csv
+
+----------------------------
+Weights of the Learned Model
+----------------------------
+Clump Thickness : 0.25
+Uniformity of Cell Size : 0.25
+Uniformity of Cell Shape : 0.0625
+Marginal Adhesion : 0.5
+Single Epithelial Cell Size : 0.25
+Bare Nuclei : 0.5
+Bland Chromatin : 0.25
+Normal Nucleoli : 0.25
+Mitoses : 0.5
+
+
+-----------
+Constants
+-----------
+THETA = 0.5
+ALPHA = 2.0

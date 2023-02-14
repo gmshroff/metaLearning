@@ -1,0 +1,20 @@
+----------------------------------------------------------
+Winnow2 Summary Statistics (Testing)
+----------------------------------------------------------
+Data Set : ../data/breast_cancer_dataset.csv
+
+Number of Test Instances : 231
+True Positives : 76
+False Positives : 4
+False Negatives : 4
+True Negatives : 147
+Accuracy : 96.53679653679653%
+Specificity : 97.35099337748345%
+Precision : 95.0%
+Recall : 95.0%
+Negative Predictive Value : 97.35099337748345%
+Miss Rate  : 5.0%
+Fall-Out : 2.6490066225165565%
+False Discovery Rate : 5.0%
+False Omission Rate  : 2.6490066225165565%
+F1 Score: 0.95
