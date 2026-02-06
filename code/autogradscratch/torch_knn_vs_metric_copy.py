@@ -51,7 +51,7 @@ class EmbeddingNet(nn.Module):
         self.net = nn.Sequential(
             nn.Linear(50, 32),
             nn.ReLU(),
-            nn.Linear(32, 4)
+            nn.Linear(32, 2)
         )
 
     def forward(self, x):
@@ -132,5 +132,14 @@ knn_emb = KNeighborsClassifier(n_neighbors=3)
 knn_emb.fit(X_train_emb, y_train)
 y_pred_emb = knn_emb.predict(X_test_emb)
 
+print(X_train_emb.shape,X_test_emb.shape,y_train.shape)
+
+# "Manual" softmax kNN: For each test sample, get softmax attention over train set and compute the weighted sum of y_train, then threshold at 0.5
+similarity = torch.tensor(X_test_emb) @ torch.tensor(X_train_emb).T  # (num_test, num_train)
+probs = torch.softmax(similarity, dim=1)  # (num_test, num_train)
+y_train_float = torch.tensor(y_train.astype(np.float32))  # (num_train,)
+y_pred_emd = (probs @ y_train_float > 0.5).long()  # (num_test,)
+
 print("k-NN accuracy (learned metric):",
       accuracy_score(y_test, y_pred_emb))
+# 
